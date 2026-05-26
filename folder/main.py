@@ -40,7 +40,7 @@ def _read_matches(path: pathlib.Path) -> pd.DataFrame:
 
     # Your sample looks tab-separated, but the file is called data.csv.
     # We try to auto-detect the delimiter.
-    df = pd.read_csv(path, sep=None, engine="python")
+    df = pd.read_csv(path, sep="\t")
 
     required = {"season", "home_team", "away_team", "home_score", "away_score"}
     missing = required - set(df.columns)
